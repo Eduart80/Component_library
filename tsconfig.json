@@ -1,7 +1,14 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    { "path": "./tsconfig.app.json" }
+  ],
+   "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "types": ["mocha", "node"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "test/AlertBox.test.tsx", "test/ProductDisplay.test.tsx", "test/UserProfileCard.test.tsx"]
 }
