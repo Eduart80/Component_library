@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { ProductDisplay } from '../src/components/ProductDisplay/ProductDisplay';
-import { expect } from 'chai';
 
 describe('Product Display component', () => {
-  it('should render product name and description', () => {
+  test('should render product name and description', () => {
     const product = {
       id: '1',
       name: 'Wireless Headphones',

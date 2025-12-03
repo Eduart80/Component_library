@@ -2,7 +2,7 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/test'],
-  testMatch: ['**/ProductDisplay.test.(ts|tsx)'],
+  testMatch: ['**/*.test.(ts|tsx)'],
   transform: {
     '^.+\\.(ts|tsx)$': ['ts-jest', {
       tsconfig: 'tsconfig.test.json'
