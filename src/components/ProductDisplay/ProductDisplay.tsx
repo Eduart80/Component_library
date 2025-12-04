@@ -8,7 +8,7 @@ export const ProductDisplay: React.FC<ProductDisplayProps> = ({
   const cardStyle = {
     background: 'white',
     color : 'blue',
-    width: '80%',
+    width: '100%',
     height: '100vh'
   }
   return(
@@ -23,7 +23,7 @@ export const ProductDisplay: React.FC<ProductDisplayProps> = ({
                     <p className="text-primary fw-bolder">${product.price}</p>
                     <p>{product.description}</p>
                     <p>{product.inStock?"In Stock":"Out of Stock"}</p>
-                <button className={`btn btn-primary ${cardStyle.width}`} onClick={() => onAddToCart && onAddToCart(product.name)} >
+                <button className='btn btn-primary' style={{width:'80%'}} onClick={() => onAddToCart && onAddToCart(product.name)} >
                     Add to Cart
                 </button>
             </div>

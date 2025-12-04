@@ -18,8 +18,8 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
   };
  
   return (
-    <div className={`p-4 border-l-4 ${alertStyles[type]}`}>
-      <div className="flex justify-between items-center">
+    <div className={`p-4 sticky-top border-l-4 ${alertStyles[type]}`}>
+      <div className="flex justify-between">
         <p>{message}</p>
         {onClose && (
           <button

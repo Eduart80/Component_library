@@ -8,7 +8,7 @@ function App() {
   
   const [showAlert, setShowAlert] = useState(false);
   const [cartItems, setCartItems] = useState<string[]>([]);
-
+  
   const user = {
   id: '1',
   name: 'John Doe',
@@ -35,13 +35,13 @@ const product = {
       <div className="p-4">
         {showAlert && (
           <AlertBox
-            type="success"
-            message="Product added to cart!"
+            type='success'
+            message="Product was added to cart!"
             onClose={() => setShowAlert(false)}
           />
         )}
   
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div className="flex col-md-6 ">
           <UserProfileCard
             id={user.id}
             name={user.name}
