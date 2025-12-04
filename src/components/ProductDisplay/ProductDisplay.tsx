@@ -1,21 +1,35 @@
 import { type ProductDisplayProps } from "../../types/index";
 
-export const handleAddToCard = (prod:string)=>{
-  alert(`Your ${prod} was added to cart`)
-}
+
 export const ProductDisplay: React.FC<ProductDisplayProps> = ({
     product,
     onAddToCart,
 }) => {
+  const cardStyle = {
+    background: 'white',
+    color : 'blue',
+    width: '80%',
+    height: '100vh'
+  }
   return(
     <>
-      <div>
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <button onClick={() => onAddToCart && onAddToCart(product.name)}>
-        Add to Cart
-      </button>
-    </div>
+     <div className={`d-flex justify-content-center align-items-center ${cardStyle.height}`} >
+        <div className="card p-4 border-l-4 text-center" >
+            <div className="flex align-items-center justify-between items-center">
+                <div className="card-image mx-auto">
+                    <img src='src/images/headphone.jpeg' className="img-fluid rounded-start d-block mx-auto" alt="headphone" />
+                </div>
+                    <h2>{product.name}</h2>
+                    <p className="text-primary fw-bolder">${product.price}</p>
+                    <p>{product.description}</p>
+                    <p>{product.inStock?"In Stock":"Out of Stock"}</p>
+                <button className={`btn btn-primary ${cardStyle.width}`} onClick={() => onAddToCart && onAddToCart(product.name)} >
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+     </div>
+   
     </>
   )
 }

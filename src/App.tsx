@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AlertBox } from './components/AlertBox/AlertBox';
 import { UserProfileCard } from './components/UserProfileCard/UserProfileCard';
-import { ProductDisplay, handleAddToCard } from './components/ProductDisplay/ProductDisplay';
+import { ProductDisplay } from './components/ProductDisplay/ProductDisplay';
 import './App.css'
 
 function App() {
@@ -21,7 +21,7 @@ const product = {
   name: 'Wireless Headphones',
   price: 199.99,
   description: 'High-quality wireless headphones with noise cancellation.',
-  imageUrl: 'https://example.com/headphones.jpg',
+  imageUrl: './images/headphone.jpeg',
   inStock: true
 };
  
@@ -53,7 +53,7 @@ const product = {
             product={product}
             showDescription={true}
             showStockStatus={product.inStock}
-           onAddToCart={handleAddToCard}
+            onAddToCart={handleAddToCart}
            />
            
         </div>
