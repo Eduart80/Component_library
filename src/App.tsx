@@ -14,14 +14,14 @@ function App() {
   name: 'John Doe',
   email: 'john.doe@example.com',
   role: 'Software Engineer',
-  avatarUrl: 'https://example.com/avatar.jpg'
+  avatarUrl: '/public/images/jakesully1.jpeg'
 };
 const product = {
   id: '1',
   name: 'Wireless Headphones',
   price: 199.99,
   description: 'High-quality wireless headphones with noise cancellation.',
-  imageUrl: './images/headphone.jpeg',
+  imageUrl: '/public/images/headphone.jpeg',
   inStock: true
 };
  
@@ -47,6 +47,7 @@ const product = {
             name={user.name}
             email={user.email}
             role={user.role}
+            avatarUrl={user.avatarUrl}
           />
   
           <ProductDisplay
