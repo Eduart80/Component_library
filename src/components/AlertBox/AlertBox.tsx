@@ -11,22 +11,48 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
   children
 }) => {
   const alertStyles = {
-    success: 'bg-green-100 border-green-500 text-green-700',
-    error: 'bg-red-100 border-red-500 text-red-700',
-    warning: 'bg-yellow-100 border-yellow-500 text-yellow-700',
-    info: 'bg-blue-100 border-blue-500 text-blue-700'
+    success:{ 
+      backgroundColor: '#d4edda',
+      borderColor: '#c3e6cb',
+      color: '#155724',
+      borderRadius:'20px'
+     },
+    error: {
+      backgroundColor: '#f8d7da',
+      borderColor: '#f5c6cb',
+      color: '#721c24',
+      borderRadius:'20px'
+    },
+    warning: {
+    backgroundColor: '#fff3cd',
+    borderColor: '#ffeeba',
+    color: '#856404',
+    borderRadius:'20px'
+    },
+    info: {
+      backgroundColor: '#d1ecf1',
+      borderColor: '#bee5eb',
+      color: '#0c5460',
+      borderRadius:'20px'
+    }
   };
  
   return (
-    <div className={`p-4 sticky-top border-l-4 ${alertStyles[type]}`}>
+    <div className='p-4 sticky-top border-l-4' style={alertStyles[type]}>
       <div className="flex justify-between">
         <p>{message}</p>
         {onClose && (
           <button
             onClick={onClose}
-            className="ml-4 text-gray-500 hover:text-gray-700"
-          >
-            ×
+            style={{ 
+              marginLeft: '1rem', 
+              color: '#222722ff', 
+              cursor: 'pointer',
+              background: 'none',
+              border: 'none',
+              fontSize: '1.2rem',  }}
+            >
+            X
           </button>
         )}
       </div>

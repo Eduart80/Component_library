@@ -11,8 +11,8 @@ function App() {
   
   const user = {
   id: '1',
-  name: 'John Doe',
-  email: 'john.doe@example.com',
+  name: 'Jake Sully',
+  email: 'jake.sully@example.com',
   role: 'Software Engineer',
   avatarUrl: '/public/images/jakesully1.jpeg'
 };
@@ -35,8 +35,8 @@ const product = {
       <div className="p-4">
         {showAlert && (
           <AlertBox
-            type='success'
-            message="Product was added to cart!"
+            type='info'
+            message="Product was added to cart! "
             onClose={() => setShowAlert(false)}
           />
         )}

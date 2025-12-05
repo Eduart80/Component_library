@@ -30,7 +30,7 @@ export const UserProfileCard: React.FC<User> =({
             </div>
           </div>
           <div style={{textAlign:'center', marginTop:'1rem'}}>
-          <button className='btn btn-primary' style={{width:'80%'}} onClick={() => alert('User Edit options is opened')} >
+          <button className='btn btn-primary' style={{width:'80%'}} onClick={() => alert('User Jake is open for discussion 😂')} >
                     Edit Profile
           </button>
           </div>
