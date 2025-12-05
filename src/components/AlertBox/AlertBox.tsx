@@ -12,9 +12,9 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
 }) => {
   const alertStyles = {
     success:{ 
-      backgroundColor: '#d4edda',
-      borderColor: '#c3e6cb',
-      color: '#155724',
+      backgroundColor: '#baf0c7ff',
+      borderColor: '#a9e8b8ff',
+      color: '#30a94dff',
       borderRadius:'20px'
      },
     error: {
@@ -39,18 +39,19 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
  
   return (
     <div className='p-4 sticky-top border-l-4' style={alertStyles[type]}>
-      <div className="flex justify-between">
-        <p>{message}</p>
+      <div className="d-flex justify-between" >
+        <p style={{fontWeight:'bold'}}>{message}</p>
         {onClose && (
           <button
             onClick={onClose}
             style={{ 
-              marginLeft: '1rem', 
+              marginLeft: 'auto', 
               color: '#222722ff', 
               cursor: 'pointer',
               background: 'none',
               border: 'none',
-              fontSize: '1.2rem',  }}
+              fontSize: '1.2rem', 
+               }}
             >
             X
           </button>

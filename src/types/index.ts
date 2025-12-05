@@ -12,6 +12,7 @@ export interface User {
   email: string;
   role: string;
   avatarUrl?: string;
+  onUpdate?:(userId: string) => void;
   children?: React.ReactNode;
 }
  

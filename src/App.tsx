@@ -7,7 +7,9 @@ import './App.css'
 function App() {
   
   const [showAlert, setShowAlert] = useState(false);
+  const [showUserAlert, setShowUserAlert] = useState(false);
   const [cartItems, setCartItems] = useState<string[]>([]);
+  const [updateUser, setUpdateUser] = useState<string[]>([]);
   
   const user = {
   id: '1',
@@ -24,6 +26,11 @@ const product = {
   imageUrl: '/public/images/headphone.jpeg',
   inStock: true
 };
+
+const userUpdateAlert = (user: string)=>{
+    setUpdateUser([...updateUser, user ])
+    setShowUserAlert(true)
+}
  
   const handleAddToCart = (productId: string) => {
     setCartItems([...cartItems, productId]);
@@ -35,9 +42,16 @@ const product = {
       <div className="p-4">
         {showAlert && (
           <AlertBox
-            type='info'
-            message="Product was added to cart! "
+            type='success'
+            message={`${product.name} was added to cart! `}
             onClose={() => setShowAlert(false)}
+          />
+        )}
+        {showUserAlert && (
+          <AlertBox
+            type='success'
+            message={`${user.name} profile has been updated successfully! `}
+            onClose={() => setShowUserAlert(false)}
           />
         )}
   
@@ -48,6 +62,7 @@ const product = {
             email={user.email}
             role={user.role}
             avatarUrl={user.avatarUrl}
+            onUpdate={userUpdateAlert}
           />
   
           <ProductDisplay
@@ -66,3 +81,5 @@ const product = {
 export default App
 
  
+{/* <p className="text-sm">You can now continue using the application.</p> */}
+         

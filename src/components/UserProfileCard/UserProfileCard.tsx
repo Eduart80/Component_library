@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import type {User} from '../../types/index'
 
 
@@ -8,7 +8,8 @@ export const UserProfileCard: React.FC<User> =({
       name,
       email,
       role,
-      avatarUrl
+      avatarUrl,
+      onUpdate
     }) =>{
       const cardStyle = {
         background: '#242424',
@@ -30,7 +31,7 @@ export const UserProfileCard: React.FC<User> =({
             </div>
           </div>
           <div style={{textAlign:'center', marginTop:'1rem'}}>
-          <button className='btn btn-primary' style={{width:'80%'}} onClick={() => alert('User Jake is open for discussion 😂')} >
+          <button className='btn btn-primary' style={{width:'80%'}} onClick={() =>onUpdate && onUpdate(useId.name) } >
                     Edit Profile
           </button>
           </div>
