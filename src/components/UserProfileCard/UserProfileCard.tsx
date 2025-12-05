@@ -18,7 +18,7 @@ export const UserProfileCard: React.FC<User> =({
         height: '100vh'
       }
     return (
-      <div className={`p-4 border-l-4 ${id}`}>
+      <div className={`p-4 border-l-4 ${id}`} style={{ maxWidth: '480px'}}>
         <div className='card p-4 border-l-4 text-center' style={{background: cardStyle.background}}>
           <div className="d-flex align-items-center">
             <div style={{ flex: '1', textAlign: 'center' }}>

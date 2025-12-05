@@ -26,6 +26,14 @@ const product = {
   imageUrl: '/public/images/headphone.jpeg',
   inStock: true
 };
+const product2 = {
+  id: '2',
+  name: 'Apple Earphones',
+  price: 139.99,
+  description: 'High-quality wireless earphones with noise cancellation.',
+  imageUrl: '/public/images/earphones2.jpeg',
+  inStock: false
+};
 
 const userUpdateAlert = (user: string)=>{
     setUpdateUser([...updateUser, user ])
@@ -52,10 +60,11 @@ const userUpdateAlert = (user: string)=>{
             type='success'
             message={`${user.name} profile has been updated successfully! `}
             onClose={() => setShowUserAlert(false)}
-          />
+          >
+          <p className="text-sm">You can now continue using the application.</p>
+          </AlertBox>
         )}
-  
-        <div className="flex col-md-6 ">
+   
           <UserProfileCard
             id={user.id}
             name={user.name}
@@ -64,14 +73,23 @@ const userUpdateAlert = (user: string)=>{
             avatarUrl={user.avatarUrl}
             onUpdate={userUpdateAlert}
           />
-  
-          <ProductDisplay
-            product={product}
-            showDescription={true}
-            showStockStatus={product.inStock}
-            onAddToCart={handleAddToCart}
-           />
-           
+        <div className="d-flex align-items-center">
+          <div style={{ flex: '1', textAlign: 'center' }}>
+            <ProductDisplay
+              product={product}
+              showDescription={true}
+              showStockStatus={product.inStock}
+              onAddToCart={handleAddToCart}
+            />
+          </div>
+          <div style={{flex:'2',paddingLeft:'1rem', textAlign:'center'}}>
+            <ProductDisplay
+              product={product2}
+              showDescription={true}
+              showStockStatus={product2.inStock}
+              onAddToCart={handleAddToCart}
+            />
+          </div>
         </div>
       </div>
     </>
@@ -81,5 +99,3 @@ const userUpdateAlert = (user: string)=>{
 export default App
 
  
-{/* <p className="text-sm">You can now continue using the application.</p> */}
-         
